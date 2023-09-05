@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
 
-        b1 = findViewById(R.id.b1)
+        b1 = findViewById(R.id.b1) // calling all the buttons
         b2 = findViewById(R.id.b2)
         b3 = findViewById(R.id.b3)
         b4 = findViewById(R.id.b4)
@@ -70,6 +70,7 @@ class MainActivity : AppCompatActivity() {
         var text: String
 
 
+        // concatenating the corresponding button numbers
         b1.setOnClickListener {
             text = inputtex.text.toString()+"1"
             inputtex.setText(text)
@@ -189,7 +190,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun result(text: String) {
-        val engine: ScriptEngine = ScriptEngineManager().getEngineByName("rhino")
+        val engine: ScriptEngine = ScriptEngineManager().getEngineByName("rhino") //build gradle
         try {
             val result: Any = engine.eval(text)
             var mainres = result.toString()
