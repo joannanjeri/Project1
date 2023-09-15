@@ -22,6 +22,8 @@ Here's a walkthrough of implemented user stories:
 
 <img src='project1walkthruFIN.gif' title='Video Walkthrough' width='50%' alt='Video Walkthrough' />
 
+![calculatorfinal](https://github.com/joannanjeri/Project1/assets/112664855/a55af18b-e792-4481-bd4c-2aa6c55f796b)
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
