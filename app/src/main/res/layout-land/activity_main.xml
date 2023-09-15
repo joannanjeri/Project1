@@ -14,7 +14,7 @@
         android:layout_above="@id/buttonLayout"
         android:layout_marginBottom="70dp">
         
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxWidth="240dp"
@@ -33,9 +33,9 @@
             android:textStyle="bold"
             android:id="@+id/inputnumber" >
 
-        </TextView>
+        </EditText>
 
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
@@ -50,7 +50,7 @@
             android:textAlignment="textEnd"
             android:padding="10dp">
 
-        </TextView>
+        </EditText>
 
     </LinearLayout>
 
@@ -89,9 +89,9 @@
                 android:layout_height="80dp"
                 android:text="7"
                 app:cornerRadius = "3dp"
+                android:layout_margin="8dp"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:layout_margin="8dp"
                 android:textColor="@color/black"
                 android:background="@drawable/ripple"
                 android:id="@+id/b7"
@@ -104,9 +104,9 @@
                 android:layout_height="80dp"
                 android:text="4"
                 app:cornerRadius = "3dp"
+                android:layout_margin="8dp"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:layout_margin="8dp"
                 android:textColor="@color/black"
                 android:background="@drawable/ripple"
                 android:id="@+id/b4"
@@ -119,8 +119,8 @@
                 android:layout_height="80dp"
                 android:text="1"
                 app:cornerRadius = "3dp"
-                android:textSize="30sp"
                 android:layout_margin="8dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:background="@drawable/ripple"
@@ -148,7 +148,6 @@
         </LinearLayout>
 
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -160,8 +159,8 @@
                 android:layout_height="80dp"
                 android:text="+/-"
                 app:cornerRadius = "3dp"
-                android:textSize="30sp"
                 android:layout_margin="8dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:background="@drawable/ripple"
@@ -399,82 +398,89 @@
 
         </LinearLayout>
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="vertical"-->
-<!--            android:layout_weight="1">-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
 
-<!--            <android.widget.Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:text="sin"-->
-<!--                android:textSize="30sp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:background="@drawable/ripple"-->
-<!--                android:id="@+id/bsin"-->
-<!--                android:gravity="center">-->
+            <android.widget.Button
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="sin"
+                app:cornerRadius = "3dp"
+                android:layout_margin="8dp"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@drawable/ripple"
+                android:id="@+id/bsin"
+                android:gravity="center">
 
-<!--            </android.widget.Button>-->
+            </android.widget.Button>
 
-<!--            <android.widget.Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:text="cos"-->
-<!--                android:textSize="30sp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:background="@drawable/ripple"-->
-<!--                android:id="@+id/bcos"-->
-<!--                android:gravity="center">-->
+            <android.widget.Button
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="cos"
+                app:cornerRadius = "3dp"
+                android:layout_margin="8dp"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@drawable/ripple"
+                android:id="@+id/bcos"
+                android:gravity="center">
 
-<!--            </android.widget.Button>-->
+            </android.widget.Button>
 
-<!--            <android.widget.Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:text="tan"-->
-<!--                android:textSize="30sp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:background="@drawable/ripple"-->
-<!--                android:id="@+id/btan"-->
-<!--                android:gravity="center">-->
+            <android.widget.Button
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="tan"
+                app:cornerRadius = "3dp"
+                android:layout_margin="8dp"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@drawable/ripple"
+                android:id="@+id/btan"
+                android:gravity="center">
 
-<!--            </android.widget.Button>-->
+            </android.widget.Button>
 
-<!--            <android.widget.Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:text="log 10"-->
-<!--                android:textSize="30sp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:background="@drawable/ripple"-->
-<!--                android:id="@+id/blog10"-->
-<!--                android:gravity="center">-->
+            <android.widget.Button
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="log 10"
+                app:cornerRadius = "3dp"
+                android:layout_margin="8dp"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@drawable/ripple"
+                android:id="@+id/blog10"
+                android:gravity="center">
 
-<!--            </android.widget.Button>-->
+            </android.widget.Button>
 
-<!--            <android.widget.Button-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:text="ln"-->
-<!--                android:textSize="30sp"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:background="@drawable/ripple"-->
-<!--                android:id="@+id/bln"-->
-<!--                android:gravity="center">-->
+            <android.widget.Button
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="ln"
+                app:cornerRadius = "3dp"
+                android:layout_margin="8dp"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:background="@drawable/ripple"
+                android:id="@+id/bln"
+                android:gravity="center">
 
-<!--            </android.widget.Button>-->
+            </android.widget.Button>
 
+        </LinearLayout>
 
-
-<!--        </LinearLayout>-->
-
-        
     </LinearLayout>
 
 </RelativeLayout>
