@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
     var btan: android.widget.Button? = null
     var blog10: android.widget.Button? = null
     var bln: android.widget.Button? = null
+
     var check = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
