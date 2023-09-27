@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:orientation="vertical"
     android:background="@color/white">
 
     <LinearLayout
@@ -12,24 +13,25 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_above="@id/buttonLayout"
-        android:layout_marginBottom="70dp">
-        
+        android:layout_marginBottom="50dp"
+
+        >
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxWidth="240dp"
+
             android:text=""
             android:textColor="@color/black"
             android:clickable="false"
             android:focusable="true"
             android:scrollHorizontally="true"
-
             android:cursorVisible="true"
             android:verticalScrollbarPosition="right"
             android:background="@android:color/transparent"
-            android:padding="10dp"
+
             android:textAlignment="textEnd"
-            android:textSize="80sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:id="@+id/inputnumber" >
 
@@ -38,18 +40,20 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:text=""
             android:textColor="@color/black"
-            android:scrollHorizontally="true"
-            android:ellipsize="end"
-            android:textSize="30sp"
-            android:focusable="false"
             android:clickable="false"
+            android:focusable="true"
+            android:scrollHorizontally="true"
+            android:cursorVisible="true"
+            android:verticalScrollbarPosition="right"
             android:background="@android:color/transparent"
-            android:id="@+id/result"
-            android:textAlignment="textEnd"
-            android:padding="10dp">
 
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:id="@+id/result" >
         </EditText>
 
     </LinearLayout>
@@ -58,20 +62,22 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:id="@+id/buttonLayout">
+        android:id="@+id/buttonLayout"
+        android:layout_weight="6">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1">
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="C"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -86,7 +92,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="7"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -101,7 +108,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="4"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -116,7 +124,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="1"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -131,7 +140,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="0"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -149,14 +159,15 @@
 
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1">
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="+/-"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -171,7 +182,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="8"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -186,7 +198,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="5"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -201,7 +214,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="2"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -216,7 +230,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="00"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -233,14 +248,15 @@
 
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1">
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="%"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -255,7 +271,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="9"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -270,7 +287,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="6"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -285,7 +303,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="3"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -300,7 +319,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="."
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -316,14 +336,15 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1">
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="/"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -338,7 +359,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="*"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -353,7 +375,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="-"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -368,7 +391,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="+"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -383,7 +407,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="="
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -399,14 +424,15 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1">
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="sin"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -421,7 +447,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="cos"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -436,7 +463,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="tan"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -451,7 +479,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="log 10"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -466,7 +495,8 @@
 
             <android.widget.Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:text="ln"
                 app:cornerRadius = "3dp"
                 android:layout_margin="8dp"
@@ -483,4 +513,4 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

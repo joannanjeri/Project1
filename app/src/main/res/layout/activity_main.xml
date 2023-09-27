@@ -14,7 +14,7 @@
         android:layout_above="@id/buttonLayout"
         android:layout_marginBottom="70dp">
         
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxWidth="240dp"
@@ -23,7 +23,6 @@
             android:clickable="false"
             android:focusable="true"
             android:scrollHorizontally="true"
-
             android:cursorVisible="true"
             android:verticalScrollbarPosition="right"
             android:background="@android:color/transparent"
@@ -32,10 +31,9 @@
             android:textSize="80sp"
             android:textStyle="bold"
             android:id="@+id/inputnumber" >
+        </EditText>
 
-        </TextView>
-
-        <TextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text=""
@@ -49,8 +47,7 @@
             android:id="@+id/result"
             android:textAlignment="textEnd"
             android:padding="10dp">
-
-        </TextView>
+        </EditText>
 
     </LinearLayout>
 

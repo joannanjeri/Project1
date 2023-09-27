@@ -1,58 +1,69 @@
 package com.example.project1
 
-import androidx.appcompat.app.AppCompatActivity
+import android.nfc.Tag
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.util.Log
-import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import com.google.android.material.textfield.TextInputEditText
-import java.lang.Math.cos
-import java.lang.Math.log10
-import java.lang.Math.sin
-import java.lang.Math.tan
+import androidx.appcompat.app.AppCompatActivity
+import java.lang.Exception
 import javax.script.ScriptEngine
 import javax.script.ScriptEngineManager
 import javax.script.ScriptException
 import kotlin.math.ln
-
+/**
+ * MainActivity handles the user interface and operations.
+ */
 class MainActivity : AppCompatActivity() {
-    lateinit var b1: android.widget.Button
-    lateinit var b2: android.widget.Button
-    lateinit var b3: android.widget.Button
-    lateinit var b4: android.widget.Button
-    lateinit var b5: android.widget.Button
-    lateinit var b6: android.widget.Button
-    lateinit var b7: android.widget.Button
-    lateinit var b8: android.widget.Button
-    lateinit var b9: android.widget.Button
-    lateinit var b0: android.widget.Button
-    lateinit var b00: android.widget.Button
-    lateinit var bclear: android.widget.Button
-    lateinit var badd: android.widget.Button
-    lateinit var bpercent: android.widget.Button
-    lateinit var bdivide: android.widget.Button
-    lateinit var bmultiply: android.widget.Button
-    lateinit var bminus: android.widget.Button
-    lateinit var bplus: android.widget.Button
-    lateinit var bequal: android.widget.Button
-    lateinit var bdecimal: android.widget.Button
-    lateinit var inputtex: EditText
-    lateinit var resulttex: EditText
-    var bsin: android.widget.Button? = null
-    var bcos: android.widget.Button? = null
-    var btan: android.widget.Button? = null
-    var blog10: android.widget.Button? = null
-    var bln: android.widget.Button? = null
+    private val TAG = "MainActivity"
 
-    var check = 0
+    /**
+     * declaring all the UI elements for the application
+     */
+    private lateinit var b1: android.widget.Button
+    private lateinit var b2: android.widget.Button
+    private lateinit var b3: android.widget.Button
+    private lateinit var b4: android.widget.Button
+    private lateinit var b5: android.widget.Button
+    private lateinit var b6: android.widget.Button
+    private lateinit var b7: android.widget.Button
+    private lateinit var b8: android.widget.Button
+    private lateinit var b9: android.widget.Button
+    private lateinit var b0: android.widget.Button
+    private lateinit var b00: android.widget.Button
+    private lateinit var bclear: android.widget.Button
+    private lateinit var badd: android.widget.Button
+    private lateinit var bpercent: android.widget.Button
+    private lateinit var bdivide: android.widget.Button
+    private lateinit var bmultiply: android.widget.Button
+    private lateinit var bminus: android.widget.Button
+    private lateinit var bplus: android.widget.Button
+    private lateinit var bequal: android.widget.Button
+    private lateinit var bdecimal: android.widget.Button
+    private lateinit var inputtex: EditText
+    private lateinit var resulttex:EditText
+//private var inputtex: EditText? =null;
+//    private var resulttex: EditText? =null;
+
+    private var bsin: android.widget.Button? = null
+    private var bcos: android.widget.Button? = null
+    private var btan: android.widget.Button? = null
+    private var blog10: android.widget.Button? = null
+    private var bln: android.widget.Button? = null
+
+    /**
+     * to keep track of when the user click on the operator button
+     */
+    private var check = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
-
+        /**
+         * intializing all the UI elements
+         */
         b1 = findViewById(R.id.b1) // calling all the buttons
         b2 = findViewById(R.id.b2)
         b3 = findViewById(R.id.b3)
@@ -73,8 +84,8 @@ class MainActivity : AppCompatActivity() {
         bplus = findViewById(R.id.bplus)
         bequal = findViewById(R.id.bequal)
         bdecimal = findViewById(R.id.bdecimal)
-        resulttex = findViewById(R.id.result)
-        inputtex = findViewById(R.id.inputnumber)
+        resulttex = findViewById<EditText>(R.id.result)
+        inputtex = findViewById<EditText>(R.id.inputnumber)
         bsin = findViewById(R.id.bsin)
         bcos = findViewById(R.id.bcos)
         btan = findViewById(R.id.btan)
@@ -85,7 +96,9 @@ class MainActivity : AppCompatActivity() {
         inputtex.setPressed(true)
 
         var text: String
-
+        /**
+         * Check orientation and reset input if it's a configuration change
+         */
         // Check orientation and reset input if it's a configuration change
         if (savedInstanceState != null) {
             val savedInput = savedInstanceState.getString("input")
@@ -95,8 +108,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-        // concatenating the corresponding button numbers
+        /**
+         * setting the click listeners for the numbered buttons
+         */
         b1.setOnClickListener {
             text = inputtex.text.toString()+"1"
             inputtex.setText(text)
@@ -190,31 +204,31 @@ class MainActivity : AppCompatActivity() {
         bplus.setOnClickListener {
             text = inputtex.text.toString()+"+"
             inputtex.setText(text)
-            check = check + 1
+            check += 1
         }
 
         bdivide.setOnClickListener {
             text = inputtex.text.toString()+"/"
             inputtex.setText(text)
-            check = check + 1
+            check += 1
         }
 
         bminus.setOnClickListener {
             text = inputtex.text.toString()+"-"
             inputtex.setText(text)
-            check = check + 1
+            check += 1
         }
 
         bpercent.setOnClickListener {
             text = inputtex.text.toString()+"%"
             inputtex.setText(text)
-            check = check + 1
+            check += 1
         }
 
         bmultiply.setOnClickListener {
             text = inputtex.text.toString()+"*"
             inputtex.setText(text)
-            check = check + 1
+            check += 1
         }
 
         bequal.setOnClickListener {
@@ -232,7 +246,7 @@ class MainActivity : AppCompatActivity() {
             val input = inputtex.text.toString()
             try {
                 val inputDouble = input.toDouble()
-                val result = sin(inputDouble)
+                val result = kotlin.math.sin(inputDouble)
                 inputtex.setText(result.toString())
                 resulttex.setText(null)
 
@@ -247,7 +261,7 @@ class MainActivity : AppCompatActivity() {
             val input = inputtex.text.toString()
             try {
                 val inputDouble = input.toDouble()
-                val result = cos(inputDouble)
+                val result = kotlin.math.cos(inputDouble)
                 inputtex.setText(result.toString())
                 resulttex.setText(null)
 
@@ -262,7 +276,7 @@ class MainActivity : AppCompatActivity() {
             val input = inputtex.text.toString()
             try {
                 val inputDouble = input.toDouble()
-                val result = tan(inputDouble)
+                val result = kotlin.math.tan(inputDouble)
                 inputtex.setText(result.toString())
                 resulttex.setText(null)
 
@@ -277,7 +291,7 @@ class MainActivity : AppCompatActivity() {
             val input = inputtex.text.toString()
             try {
                 val inputDouble = input.toDouble()
-                val result = log10(inputDouble)
+                val result = kotlin.math.log10(inputDouble)
                 inputtex.setText(result.toString())
                 resulttex.setText(null)
 
@@ -308,14 +322,16 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
         outState.putString("input", inputtex.text.toString())
     }
-
+//
 //    override fun onConfigurationChanged(newConfig: Configuration) {
 //        super.onConfigurationChanged(newConfig)
 //        // Handle configuration change here if needed
 //    }
 
 
-
+    /**
+     * evaluating the input text using a script engine
+     */
     private fun result(text: String) {
         val engine: ScriptEngine = ScriptEngineManager().getEngineByName("rhino") //build gradle
         try {
@@ -323,7 +339,7 @@ class MainActivity : AppCompatActivity() {
             var mainres = result.toString()
             if(check == 0)
             {
-                resulttex.setText(null)
+                resulttex.text = null
             }
             else
             {
@@ -331,9 +347,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        catch (e: ScriptException)
+        catch (e: Exception)
         {
-            Log.d("TAG", "ERROR")
+            Log.d(TAG, e.message.toString())
         }
     }
 }
